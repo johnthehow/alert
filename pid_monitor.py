@@ -17,7 +17,7 @@ def change_monitor(pid,git_repo_path,time_interval,max_time):
 				os.system(f'git -C "{git_repo_path}" pull')
 				time.sleep(10)
 				with open(git_repo_path.joinpath('README.md'),mode='a+',encoding='utf-8') as file:
-					file.write(datetime.datetime.now())
+					file.write(str(datetime.datetime.now()))
 					file.write('\n')
 					file.write(__file__)
 					file.write('\n')
@@ -31,7 +31,7 @@ def change_monitor(pid,git_repo_path,time_interval,max_time):
 			os.system(f'git -C "{git_repo_path}" pull')
 			time.sleep(10)
 			with open(git_repo_path.joinpath('README.md'),mode='a+',encoding='utf-8') as file:
-				file.write(datetime.datetime.now())
+				file.write(str(datetime.datetime.now()))
 				file.write('\n')
 				file.write(__file__)
 				file.write('\n')
