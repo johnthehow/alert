@@ -39,4 +39,4 @@ while True:
 			last_num_pythons = num_pythons
 		else:
 			last_num_pythons = num_pythons
-	time.sleep(2)
+	time.sleep(60)
