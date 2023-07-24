@@ -27,6 +27,8 @@ def change_monitor(log_file_path,git_repo_path,time_interval,max_time):
 						print(log_update_time)
 						log_last_line = f'Last line: \n {last_line}'
 						print(log_last_line)
+						os.system(f'git -C "{git_repo_path}" pull')
+						time.sleep(10)
 						os.system(f'git -C "{git_repo_path}" add .')
 						os.system(f'git -C "{git_repo_path}" commit -m "{log_update_time} with {log_last_line}"')
 						os.system(f'git -C "{git_repo_path}" push')
@@ -37,12 +39,16 @@ def change_monitor(log_file_path,git_repo_path,time_interval,max_time):
 						print(log_update_time)
 						log_last_line = f'Last line: \n {last_line}'
 						print(log_last_line)
+						os.system(f'git -C "{git_repo_path}" pull')
+						time.sleep(10)
 						os.system(f'git -C "{git_repo_path}" add .')
 						os.system(f'git -C "{git_repo_path}" commit -m "{log_update_time} with {log_last_line}"')
 						os.system(f'git -C "{git_repo_path}" push')
 		else:
 			log_max_time = f'Max monitoring time {max_time} seconds reached at {datetime.datetime.now()}'
 			print(log_max_time)
+			os.system(f'git -C "{git_repo_path}" pull')
+			time.sleep(10)
 			os.system(f'git -C "{git_repo_path}" add .')
 			os.system(f'git -C "{git_repo_path}" commit -m "{log_update_time} with {log_last_line}"')
 			os.system(f'git -C "{git_repo_path}" push')
