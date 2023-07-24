@@ -16,7 +16,7 @@ last_num_pythons = 0
 
 while True:
 	procs = [p.name() for p in psutil.process_iter()]
-	pys = [i for i in procs if i=='pythonw.exe']
+	pys = [i for i in procs if i=='python.exe']
 	num_pythons = len(pys)
 	if num_pythons == 0:
 		with open(log_dir.joinpath('python_status.txt'),mode='a+',encoding='utf-8') as file:
