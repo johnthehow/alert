@@ -18,9 +18,9 @@ while True:
 	procs = [p.name() for p in psutil.process_iter()]
 	pys = [i for i in procs if i=='python.exe']
 	num_pythons = len(pys)
-	if num_pythons == 0:
+	if num_pythons == 1:
 		with open(log_dir.joinpath('python_status.txt'),mode='a+',encoding='utf-8') as file:
-			file.write(f'{num_pythons} instances of python is running, finished. {timenow}...')
+			file.write(f'No instances of python is running other than this one, mission accomplished. {timenow}...')
 			file.write('\n')
 		time.sleep(10)
 		os.system(f'git -C "{log_dir.absolute()}" add .')
