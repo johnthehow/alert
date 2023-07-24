@@ -3,6 +3,9 @@ import time
 import os
 import argparse
 from pathlib import Path
+import datetime
+
+timenow = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('log_dir')
@@ -16,13 +19,19 @@ while True:
 	pys = [i for i in procs if i=='pythonw.exe']
 	num_pythons = len(pys)
 	if num_pythons == 0:
-		print('no pythons running...')
+		with open(log_dir.joinpath('python_status.txt'),mode='a+',encoding='utf-8') as file:
+			file.write(f'{num_pythons} instances of python is running, finished. {timenow}...')
+			file.write('\n')
+		time.sleep(10)
+		os.system(f'git -C "{log_dir.absolute()}" add .')
+		os.system(f'git -C "{log_dir.absolute()}" commit -m "status update"')
+		os.system(f'git -C "{log_dir.absolute()}" push')
 		break
 	else:
 		if num_pythons != last_num_pythons:
 			print(f'{num_pythons} instances of python is running...')
 			with open(log_dir.joinpath('python_status.txt'),mode='a+',encoding='utf-8') as file:
-				file.write(f'{num_pythons} instances of python is running ...')
+				file.write(f'{num_pythons} instances of python is running {timenow}...')
 				file.write('\n')
 			os.system(f'git -C "{log_dir.absolute()}" add .')
 			os.system(f'git -C "{log_dir.absolute()}" commit -m "status update"')
