@@ -1,0 +1,1 @@
+[2023-12-30 12:26:15.573056] mouse movement detected

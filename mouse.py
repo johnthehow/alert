@@ -21,7 +21,9 @@ while True:
 
     # print("Mouse movement detected.")
     print('next detection in 60 secs')
-    os.system(f'echo mouse movement detected>.\\mouse_{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.txt')
+    with open('./log/mousemove.txt',mode='a',encoding='utf-8') as logfile:
+        logfile.write(f'[{datetime.datetime.now()}] mouse movement detected\n')
+    # os.system(f'echo mouse movement detected>.\\mouse_{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.txt')
     time.sleep(3)
     os.system(f'git -C "{os.getcwd()}" add .')
     time.sleep(1)
