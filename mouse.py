@@ -21,13 +21,13 @@ while True:
 
     # print("Mouse movement detected.")
     print('next detection in 60 secs')
-    os.system(f'echo mouse movement detected>C:\\Users\\dell\\Desktop\\thehow\\PYTHON\\thehow_codes\\progmon\\{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.txt')
+    os.system(f'echo mouse movement detected>.\\mouse_{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.txt')
     time.sleep(3)
-    os.system('git -C "C:\\Users\\dell\\Desktop\\thehow\\PYTHON\\thehow_codes\\progmon" add .')
+    os.system(f'git -C "{os.getcwd()}" add .')
     time.sleep(1)
-    os.system('git -C "C:\\Users\\dell\\Desktop\\thehow\\PYTHON\\thehow_codes\\progmon" commit -m "mouse move detected"')
+    os.system(f'git -C "{os.getcwd()}" commit -m "mouse move detected"')
     time.sleep(1)
-    os.system('git -C "C:\\Users\\dell\\Desktop\\thehow\\PYTHON\\thehow_codes\\progmon" push')
+    os.system(f'git -C "{os.getcwd()}" push')
     # os.system('msg * 如须使用/关闭此计算机,请务必联系13592023682')
     time.sleep(60)
     monitor_mouse=True
