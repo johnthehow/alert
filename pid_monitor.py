@@ -11,15 +11,17 @@ def change_monitor(pid,git_repo_path,time_interval):
 		time.sleep(1)
 		continue
 	else:
+		end_time = time.time()
+		duration = end_time-start_time
 		os.system(f'git -C "{git_repo_path}" pull')
-		time.sleep(10)
+		time.sleep(20)
 		with open(git_repo_path.joinpath('README.md'),mode='a+',encoding='utf-8') as file:
 			file.write(str(datetime.datetime.now()))
 			file.write('\r\n')
 			file.write(__file__)
 			file.write('\r\n')
 		os.system(f'git -C "{git_repo_path}" add .')
-		os.system(f'git -C "{git_repo_path}" commit -m "process terminated."')
+		os.system(f'git -C "{git_repo_path}" commit -m "process {pid} terminated, duration: {duration} secs."')
 		os.system(f'git -C "{git_repo_path}" push')
 	return
 
