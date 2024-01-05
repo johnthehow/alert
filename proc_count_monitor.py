@@ -1,5 +1,6 @@
 import subprocess
 import time
+import os
 
 proc_name = input('process name: ')
 stdout, stderr = subprocess.Popen(['powershell.exe', '-Command', f'(Get-Process -Name {proc_name}).Count'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True).communicate()
@@ -19,12 +20,12 @@ while int(stdout) > int(alert_threshold):
 end_time = time.time()
 duration = end_time-start_time
 print(f'proc {proc_name} num lower than {alert_threshold}.')
-os.system(f'git -C "{git_repo_path}" pull')
+os.system(f'git pull')
 time.sleep(20)
-with open(git_repo_path.joinpath('README.md'),mode='a+',encoding='utf-8') as file:
+with open('README.md',mode='a+',encoding='utf-8') as file:
 	file.write('\r\n')
-	file.write(f'process {pid} terminated at {datetime.datetime.now()}, duration: {duration} secs.')
+	file.write(f'proc {proc_name} num lower than {alert_threshold}, duration: {duration} secs.')
 	file.write('\r\n')
-os.system(f'git add .')
-os.system(f'git commit -m "proc {proc_name} num lower than {alert_threshold}, duration: {duration} secs."')
-os.system(f'git push')
+	os.system(f'git add .')
+	os.system(f'git commit -m "proc {proc_name} num lower than {alert_threshold}, duration: {duration} secs."')
+	os.system(f'git push')
