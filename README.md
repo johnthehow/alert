@@ -11,3 +11,5 @@ process 55116 terminated at 2024-01-03 19:07:50.794212, duration: 2383.186795949
 
 process 51004 terminated at 2024-01-03 19:35:54.243379, duration: 1313.781662940979 secs.
 
+
+proc python num lower than 2, duration: 7501.69140124321 secs.
