@@ -1,10 +1,13 @@
 from pynput.mouse import Listener
 import time
 import os
+import subprocess
 import datetime
 
 # Flag to indicate whether to monitor mouse movements
 monitor_mouse = True
+
+log_path = './log/mousemove.txt'
 
 # Function to be called when the mouse is moved
 def on_move(x, y):
@@ -21,7 +24,7 @@ while True:
 
     # print("Mouse movement detected.")
     print('next detection in 60 secs')
-    with open('./log/mousemove.txt',mode='a',encoding='utf-8') as logfile:
+    with open(log_path,mode='a',encoding='utf-8') as logfile:
         logfile.write(f'[{datetime.datetime.now()}] mouse movement detected\n')
     # os.system(f'echo mouse movement detected>.\\mouse_{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.txt')
     time.sleep(3)
@@ -30,6 +33,5 @@ while True:
     os.system(f'git -C "{os.getcwd()}" commit -m "mouse move detected"')
     time.sleep(1)
     os.system(f'git -C "{os.getcwd()}" push')
-    # os.system('msg * 如须使用/关闭此计算机,请务必联系13592023682')
     time.sleep(60)
     monitor_mouse=True
