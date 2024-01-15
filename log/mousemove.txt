@@ -44,3 +44,23 @@ failed to pull with/without proxy: timeout, subsequent codes discarded.
 [2024-01-15 00:37:41.203372] mouse movement detected
 try to pull without proxy at 2024-01-15 00:37:41.203372
 failed to pull with/without proxy: timeout, subsequent codes discarded.
+[2024-01-15 00:38:04.617127] mouse movement detected
+try to pull without proxy at 2024-01-15 00:38:04.617127
+trying to push at 2024-01-15 00:38:12.876437
+push done at 2024-01-15 00:38:25.683680
+[2024-01-15 11:34:57.648469] mouse movement detected
+try to pull without proxy at 2024-01-15 11:34:57.648469
+failed to pull with/without proxy: timeout, subsequent codes discarded.
+[2024-01-15 11:35:28.518518] mouse movement detected
+try to pull without proxy at 2024-01-15 11:35:28.518518
+failed to pull with/without proxy: timeout, subsequent codes discarded.
+[2024-01-15 11:35:53.205574] mouse movement detected
+try to pull without proxy at 2024-01-15 11:35:53.205574
+failed to pull with/without proxy: timeout, subsequent codes discarded.
+[2024-01-15 17:22:19.492111] mouse movement detected
+try to pull without proxy at 2024-01-15 17:22:19.492111
+trying to push at 2024-01-15 17:22:20.827680
+push failed at 2024-01-15 17:22:20.875681
+[2024-01-15 20:05:07.449940] mouse movement detected
+try to pull without proxy at 2024-01-15 20:05:07.449940
+failed to pull with/without proxy, subsequent codes discarded.
