@@ -64,3 +64,7 @@ push failed at 2024-01-15 17:22:20.875681
 [2024-01-15 20:05:07.449940] mouse movement detected
 try to pull without proxy at 2024-01-15 20:05:07.449940
 failed to pull with/without proxy, subsequent codes discarded.
+[2024-01-15 20:05:11.298032] mouse movement detected
+try to pull without proxy at 2024-01-15 20:05:11.298032
+trying to push at 2024-01-15 20:05:12.568031
+push done at 2024-01-15 20:05:25.401992
